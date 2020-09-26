@@ -12,12 +12,12 @@ jobs:
             - '91:83:d2:3f:f5:ba:1b:10:2d:83:f6:3b:a3:4e:83:38'
       - run:
           name: fix host authenticity for production server
-          command: ssh-keyscan 178.128.10.75 >> ~/.ssh/known_hosts
+          command: ssh-keyscan 138.68.57.202 >> ~/.ssh/known_hosts
       - run:
           name: The First Step
           command: |
             ls -a
-            scp -P22 -r * circleci@178.128.10.75:/var/www/html
+            scp -r * root@138.68.57.202:/var/www/html
 workflows:
   ex:
     jobs:
