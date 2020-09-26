@@ -2,6 +2,9 @@ version: 2.1
 orbs:
   cypress: cypress-io/cypress@1
 jobs:
+  test:
+    -cypress/run:
+      yarn: true
   deploy:
     docker:
       - image: alpine:3.7
@@ -14,6 +17,5 @@ jobs:
 workflows:
   ex:
     jobs:
-      - cypress/run:
-          yarn: true
+      - test
       - deploy
