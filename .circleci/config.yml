@@ -9,7 +9,7 @@ jobs:
       - checkout
       - add_ssh_keys:
           fingerprints:
-            - 'ea:39:f9:18:8e:d8:79:1d:b7:bf:69:36:6b:b5:95:47'
+            - '91:83:d2:3f:f5:ba:1b:10:2d:83:f6:3b:a3:4e:83:38'
       - run:
           name: fix host authenticity for production server
           command: ssh-keyscan 178.128.10.75 >> ~/.ssh/known_hosts
@@ -17,7 +17,7 @@ jobs:
           name: The First Step
           command: |
             ls -a
-            scp * -r root@178.128.10.75:/var/www/html
+            scp * -r circleci@178.128.10.75:/var/www/html
 workflows:
   ex:
     jobs:
