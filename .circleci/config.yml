@@ -19,6 +19,6 @@ workflows:
     jobs:
      # - cypress/run:
      #     yarn: true
-      - deploy:
+      - deploy
      #     requires:
      #       - cypress/run
