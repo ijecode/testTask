@@ -11,8 +11,12 @@ jobs:
           fingerprints:
             - 'ea:39:f9:18:8e:d8:79:1d:b7:bf:69:36:6b:b5:95:47'
       - run:
+          name: fix host authenticity for production server
+          command: ssh-keyscan 178.128.10.75 >> ~/.ssh/known_hosts
+      - run:
           name: The First Step
           command: |
+            ls -a
             scp * -r root@178.128.10.75:/var/www/html
 workflows:
   ex:
