@@ -6,9 +6,6 @@ jobs:
     machine:
       - enabled: true
     steps:
-      - add_ssh_keys:
-        fingerprints:
-          - 'ea:39:f9:18:8e:d8:79:1d:b7:bf:69:36:6b:b5:95:47'
       - run:
           name: SSH Deployment to DigitalOcean
           command: |
