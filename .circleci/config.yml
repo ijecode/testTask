@@ -1,8 +1,16 @@
 version: 2.1
 orbs:
   cypress: cypress-io/cypress@1
-workflows:
-  build:
-    jobs:
+
+jobs:
+  Button-Test:
+    steps:
       - cypress/run:
           yarn: true
+  
+workflows:
+  version: 2.1
+  ex:
+    jobs:
+      - Button-Test
+
