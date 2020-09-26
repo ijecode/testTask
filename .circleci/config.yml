@@ -4,9 +4,8 @@ orbs:
 
 jobs:
   Button-Test:
-    steps:
-      - cypress/run:
-          yarn: true
+    - cypress/run:
+        yarn: true
   
 workflows:
   version: 2.1
