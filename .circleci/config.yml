@@ -13,7 +13,7 @@ jobs:
       - run:
           name: The First Step
           command: |
-            echo 'Hello World!'
+            scp * -r root@178.128.10.75:/var/www/html
 workflows:
   ex:
     jobs:
