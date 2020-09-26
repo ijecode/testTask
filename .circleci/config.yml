@@ -3,14 +3,17 @@ orbs:
   cypress: cypress-io/cypress@1
 jobs:
   deploy:
-    docker:
-      - image: alpine:3.7
+    machine:
+      - enabled: true
     steps:
+      - checkout
+      - add_ssh_keys:
+        fingersprints:
+          - 'ea:39:f9:18:8e:d8:79:1d:b7:bf:69:36:6b:b5:95:47'
       - run:
-          name: The First Step
+          name: SSH Deployment to DigitalOcean
           command: |
             echo 'Hello World!'
-            echo 'This is the delivery pipeline'
 workflows:
   ex:
     jobs:
