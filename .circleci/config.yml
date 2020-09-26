@@ -21,8 +21,8 @@ jobs:
 workflows:
   ex:
     jobs:
-     # - cypress/run:
-     #     yarn: true
-      - deploy
-     #     requires:
-     #       - cypress/run
+      - cypress/run:
+          yarn: true
+      - deploy:
+          requires:
+            - cypress/run
