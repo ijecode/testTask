@@ -4,7 +4,7 @@ orbs:
 jobs:
   deploy:
     docker:
-      - image: alpine:3.7
+      image: cimg/base:2020.01
     steps:
       - checkout
       - add_ssh_keys:
@@ -17,8 +17,8 @@ jobs:
 workflows:
   ex:
     jobs:
-      - cypress/run:
-          yarn: true
+     # - cypress/run:
+     #     yarn: true
       - deploy:
-          requires:
-            - cypress/run
+     #     requires:
+     #       - cypress/run
