@@ -4,6 +4,7 @@ orbs:
 jobs:
   test:
     -cypress/run:
+      executor: cypress/base-8
       yarn: true
   deploy:
     docker:
