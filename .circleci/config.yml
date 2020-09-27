@@ -11,10 +11,7 @@ jobs:
           fingerprints:
             - '91:83:d2:3f:f5:ba:1b:10:2d:83:f6:3b:a3:4e:83:38'
       - run:
-          name: fix host authenticity for production server
-          command: ssh-keyscan 167.99.174.103 >> ~/.ssh/known_hosts
-      - run:
-          name: The First Step
+          name: Deploy Files with SCP
           command: |
             ls -a
             scp -r * root@167.99.174.103:/var/www/html
